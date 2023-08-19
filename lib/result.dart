@@ -96,17 +96,21 @@ class _ResultCartState extends State<ResultCart> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(right: 10),
-                          child: ElevatedButton(
-                            onPressed: (){
-                              object.add_to_cart(imageStore[index], nameStore[index], priceStore[index], unitStore[index]);
-                            },
-                            child: Text('Remove From Cart',style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white),),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blueGrey.shade900,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                              fixedSize: Size(101, 27),
-                            ),
-                          ),
+                          // child: ElevatedButton(
+                          //   onPressed: (){
+                          //     object.add_to_cart(imageStore[index], nameStore[index], priceStore[index], unitStore[index]);
+                          //   },
+                          //   child: Text('Remove From Cart',style: TextStyle(fontWeight: FontWeight.w500,color: Colors.white),),
+                          //   style: ElevatedButton.styleFrom(
+                          //     backgroundColor: Colors.blueGrey.shade900,
+                          //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                          //     fixedSize: Size(101, 27),
+                          //   ),
+                          // ),
+                          child:IconButton(icon:const Icon(Icons.delete), onPressed: () {
+                            object.add_to_cart(imageStore[index], nameStore[index], priceStore[index], unitStore[index]);
+                          },),
+
                         )
                       ],
                     )
